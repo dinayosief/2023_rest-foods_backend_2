@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/menus")
 public class MenuController {
 
     @Autowired
@@ -20,20 +19,18 @@ public class MenuController {
      * @return ResponseEntity containing List of all Menus
      */
     @GetMapping
-    public ResponseEntity<List<Menu>> getAllMenu() {
-        return ResponseEntity.ok().body(menuService.getAllManu());
+    public ResponseEntity<List<Menu>> getAllMenus() {
+        return ResponseEntity.ok().body(menuService.getAllMenus());
     }
 
     /**
-     * Returns a ResponseEntity containing Reservation with specific id
+     * Returns a ResponseEntity containing Menu with specific id
      *
-     * @param menuId id of desired reservation
-     * @return ResponseEntity containing Reservation with said id
+     * @param menuId id of desired menu
+     * @return ResponseEntity containing Menu with said id
      */
-    @GetMapping("/{manuId}")
-    public ResponseEntity<Menu> getMenuById(@PathVariable("manuId") Integer menuId) {
-        return ResponseEntity.ok().body(menuService.getMenuById(manuId));
+    @GetMapping("/{menuId}")
+    public ResponseEntity<Menu> getMenuById(@PathVariable("menuId") Integer menuId) {
+        return ResponseEntity.ok().body(menuService.getMenuById(menuId));
     }
-
-
 }
