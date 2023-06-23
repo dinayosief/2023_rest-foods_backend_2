@@ -17,15 +17,13 @@ public class Menu {
     @Column(name="ID")
     private Integer menuId;
     @NotBlank
+    private String img;
+    @NotBlank
     @Size(min=1, max=300, message = "has to be between 1 and 300 characters")
     @Column
-    private String Name;
+    private String name;
     @NotBlank
-<<<<<<< HEAD
-    private String Price;
-=======
-    @Column
-    private Integer Price;
 
->>>>>>> b74e94b800156ca2d0d64de192e12735da1edb13
+    @Column
+    private Integer price;
 }
