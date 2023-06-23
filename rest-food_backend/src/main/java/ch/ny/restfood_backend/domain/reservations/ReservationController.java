@@ -1,5 +1,6 @@
 package ch.ny.restfood_backend.domain.reservations;
 
+import ch.ny.restfood_backend.domain.exceptions.IdNotNullException;
 import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,13 +76,32 @@ public class ReservationController {
         return ResponseEntity.ok(reservation);
     }
 
+    /**
+     * Handles ResourceNotFoundException
+     * @param rnfe
+     * @return 404 error and error message
+     */
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<String> handleRnfeException(ResourceNotFoundException rnfe){
         return ResponseEntity.status(404).body(rnfe.getMessage());
     }
+    /**
+     * Handles MethodArgumentNotValidException
+     * @param manve
+     * @return 400 error and error message
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handleManveException(MethodArgumentNotValidException manve){
         return ResponseEntity.status(400).body(Objects.requireNonNull(manve.getFieldError()).getDefaultMessage());
+    }
+    /**
+     * Handles IdNotNullException
+     * @param inn
+     * @return 400 error and error message
+     */
+    @ExceptionHandler(IdNotNullException.class)
+    public ResponseEntity<String> handleInnException(IdNotNullException inn){
+        return ResponseEntity.status(400).body(inn.getMessage());
     }
 
 
