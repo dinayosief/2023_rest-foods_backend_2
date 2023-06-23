@@ -25,7 +25,6 @@ public class Menu {
     @Column
     private String name;
     @NotBlank
-
     @Column
     private Integer price;
 
