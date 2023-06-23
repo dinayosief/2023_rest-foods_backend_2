@@ -1,11 +1,13 @@
 package ch.ny.restfood_backend.domain.reservations;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -19,10 +21,12 @@ public class Reservation {
     private Integer reservationId;
 
     @Column
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
     @Column
-    private LocalDateTime time;
+    @JsonFormat(pattern = "HH:mm:ss")
+    private LocalTime time;
 
     @Column
     @PositiveOrZero
