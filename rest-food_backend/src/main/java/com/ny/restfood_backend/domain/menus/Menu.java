@@ -2,6 +2,8 @@ package com.ny.restfood_backend.domain.menus;
 
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -13,5 +15,9 @@ public class Menu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
     private Integer menuId;
+    @NotBlank
+    private String Name;
+    @NotBlank
+    private String Price;
 
 }
