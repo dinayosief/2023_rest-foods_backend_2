@@ -39,8 +39,6 @@ public class MenuService {
     public void update(Menu menu){
         Menu menuUpdate = menuRepository.findById(menu.getMenuId()).orElseThrow(() -> new ResourceNotFoundException("Menu with id " + menu.getMenuId() + " was not found."));
 
-        //set other attributes
-
         menuRepository.save(menuUpdate);
 
         log.info("Menu with id " + menuUpdate.getMenuId() + "was updated.");
