@@ -1,4 +1,4 @@
-package com.ny.restfood_backend.domain.exceptions;
+package ch.ny.restfood_backend.domain.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException{
     public ResourceNotFoundException(String message){
