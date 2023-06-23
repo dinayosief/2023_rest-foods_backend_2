@@ -80,7 +80,7 @@ public class ReservationController {
 
     /**
      * Handles ResourceNotFoundException
-     * @param rnfe
+     * @param rnfe ResourceNotFoundException
      * @return 404 error and error message
      */
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -89,7 +89,7 @@ public class ReservationController {
     }
     /**
      * Handles MethodArgumentNotValidException
-     * @param manve
+     * @param manve MethodArgumentNotValidException
      * @return 400 error and error message
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -98,7 +98,7 @@ public class ReservationController {
     }
     /**
      * Handles InvalidIdException
-     * @param inn
+     * @param ii InvalidIdException
      * @return 400 error and error message
      */
     @ExceptionHandler(InvalidIdException.class)
@@ -106,11 +106,21 @@ public class ReservationController {
         return ResponseEntity.status(400).body(ii.getMessage());
     }
 
+    /**
+     * Handles HttpMessageNotReadableException
+     * @param hmnr HttpMessageNotReadableException
+     * @return 400 and error message
+     */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<String> handleHmnrException(HttpMessageNotReadableException hmnr){
         return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"starttime\": HH-MM-SS \n \"endtime\": HH-MM-SS \n \"persons\": Integer \n \"tablenumber\": Integer");
     }
 
+    /**
+     * Handles InvalidTimeException
+     * @param it InvalidTimeException
+     * @return 400 and error message
+     */
     @ExceptionHandler(InvalidTimeException.class)
     public ResponseEntity<String> handleItException(InvalidTimeException it){
         return ResponseEntity.status(400).body(it.getMessage());

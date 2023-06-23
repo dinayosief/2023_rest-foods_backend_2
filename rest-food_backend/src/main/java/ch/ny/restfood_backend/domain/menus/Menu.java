@@ -25,10 +25,8 @@ public class Menu {
     @Size(min=1, max=300, message = "has to be between 1 and 300 characters")
     @Column
     private String name;
-<<<<<<< HEAD
+
     @NotBlank
-=======
->>>>>>> ad85a6fea7622d273da790e74991ad7e850b8c63
     @Column
     private String description;
     @PositiveOrZero

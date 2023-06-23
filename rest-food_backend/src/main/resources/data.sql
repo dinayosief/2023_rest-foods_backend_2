@@ -4,13 +4,13 @@ VALUES
     ('Appetizers', 'url', 'Knusprige Ente mit Pfannkuchen', '9.50', 'Zarte Entenstreifen mit dünnen Pfannkuchen, Frühlingszwiebeln und Hoisinsauce.'),
     ('Appetizers', 'url', 'Sichuan-Hühnchen-Satay', '11.50', 'Gegrillte Hühnchenstreifen mariniert in würziger Sichuan-Sauce und serviert mit Erdnusssauce.'),
 
-    ('main course', 'url', 'Ente in Hoisinsauce', '18.50', 'Knusprige Entenbruststücke in einer reichhaltigen Hoisinsauce mit Gemüse.'),
-    ('main course',  'url', 'Kung Pao Hühnchen', '20.50', 'Gebratenes Hühnchen mit Gemüse und gerösteten Erdnüssen in einer würzigen Kung Pao-Sauce.'),
-    ('main course',  'url', 'Süß-saures Hühnchen', '19.50', 'Knusprig frittiertes Hühnchen mit Paprika, Ananas und Zwiebeln in einer süß-sauren Sauce.'),
+    ('Main course', 'url', 'Ente in Hoisinsauce', '18.50', 'Knusprige Entenbruststücke in einer reichhaltigen Hoisinsauce mit Gemüse.'),
+    ('Main course',  'url', 'Kung Pao Hühnchen', '20.50', 'Gebratenes Hühnchen mit Gemüse und gerösteten Erdnüssen in einer würzigen Kung Pao-Sauce.'),
+    ('Main course',  'url', 'Süß-saures Hühnchen', '19.50', 'Knusprig frittiertes Hühnchen mit Paprika, Ananas und Zwiebeln in einer süß-sauren Sauce.'),
 
-    ('drinks',  'url', 'Grüner Tee', '2.50', 'Frischer grüner Tee mit einem Hauch von Jasmin-Aroma.'),
-    ('drinks', 'url', 'Jasmin-Tee', '2.50', 'Wohlriechender Jasmin-Tee, der eine beruhigende Wirkung hat.'),
-    ('drinks',  'url', 'Lychee-Saft', '3.50', 'Erfrischender Saft aus frischen Lychee-Früchten.'),
+    ('Drink',  'url', 'Grüner Tee', '2.50', 'Frischer grüner Tee mit einem Hauch von Jasmin-Aroma.'),
+    ('Drink', 'url', 'Jasmin-Tee', '2.50', 'Wohlriechender Jasmin-Tee, der eine beruhigende Wirkung hat.'),
+    ('Drink',  'url', 'Lychee-Saft', '3.50', 'Erfrischender Saft aus frischen Lychee-Früchten.'),
 
     ('Dessert',  'url', 'Gebackene Banane mit Honig', '4.50', 'Karamellisierte Banane mit einer leichten Honignote, serviert mit Eiscreme.'),
     ('Dessert',  'url', 'Sesambällchen', '3.50', 'Knusprige Sesambällchen gefüllt mit süßer Lotuspaste.'),

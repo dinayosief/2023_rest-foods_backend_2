@@ -76,7 +76,7 @@ public class ReservationService {
      */
     public void update(Reservation reservation) {
         if (reservation.getReservationId() == null){
-            throw new InvalidTimeException("Id must not be null");
+            throw new InvalidTimeException("Error: Id must not be null");
         }
         else if (reservation.getStarttime().isBefore(reservation.getEndtime())) {
             Reservation reservationUpdate = reservationRepository.findById(reservation.getReservationId()).orElseThrow(() -> new ResourceNotFoundException("Reservation with id " + reservation.getReservationId() + " was not found."));

@@ -1,9 +1,12 @@
 package ch.ny.restfood_backend.domain.menus;
 
 import ch.ny.restfood_backend.domain.exceptions.InvalidIdException;
+import ch.ny.restfood_backend.domain.exceptions.InvalidTimeException;
+import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
@@ -75,6 +78,16 @@ public class MenuController {
         return ResponseEntity.ok(menu);
     }
     /**
+     * Handles ResourceNotFoundException
+     * @param rnfe ResourceNotFoundException
+     * @return 404 error and error message
+     */
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<String> handleRnfeException(ResourceNotFoundException rnfe){
+        return ResponseEntity.status(404).body(rnfe.getMessage());
+    }
+
+    /**
      * Handles MethodArgumentNotValidException
      * @param manve
      * @return 400 error and error message
@@ -85,12 +98,32 @@ public class MenuController {
     }
     /**
      * Handles InvalidIdException
-     * @param inn
+     * @param ii
      * @return 400 error and error message
      */
     @ExceptionHandler(InvalidIdException.class)
-    public ResponseEntity<String> handleInnException(InvalidIdException inn){
-        return ResponseEntity.status(400).body(inn.getMessage());
+    public ResponseEntity<String> handleIiException(InvalidIdException ii){
+        return ResponseEntity.status(400).body(ii.getMessage());
+    }
+
+    /**
+     * Handles HttpMessageNotReadableException
+     * @param hmnr HttpMessageNotReadableException
+     * @return 400 error and error message
+     */
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<String> handleHmnrException(HttpMessageNotReadableException hmnr){
+        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"menuId\": Integer(PUT) or null(POST) \n \"type\": String \n \"img\": String \n \"name\": String \n \"price\": Double \n \"description\": String");
+    }
+
+    /**
+     * Handles InvalidTimeException
+     * @param it InvalidTimeException
+     * @return 400 error and error message
+     */
+    @ExceptionHandler(InvalidTimeException.class)
+    public ResponseEntity<String> handleItException(InvalidTimeException it){
+        return ResponseEntity.status(400).body(it.getMessage());
     }
 
 }
