@@ -5,6 +5,7 @@ import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,7 +55,7 @@ public class ReservationController {
 
     /**
      * Saves a new reservation in database
-     * @param reservation reservation object,id is null
+     * @param reservation reservation object,id is null, date format is "yyyy-mm-dd", time format is "hh:mm:ss"
      * @return ResponseEntity ok if method was completed
      */
     @PostMapping
@@ -66,7 +67,7 @@ public class ReservationController {
 
     /**
      * Updates an existing reservation
-     * @param reservation updated reservation object, id should match
+     * @param reservation updated reservation object, id should match, date format is "yyyy-mm-dd", time format is "hh:mm:ss"
      * @return ResponseEntity ok if method was completed
      */
     @PutMapping
@@ -102,6 +103,11 @@ public class ReservationController {
     @ExceptionHandler(IdNotNullException.class)
     public ResponseEntity<String> handleInnException(IdNotNullException inn){
         return ResponseEntity.status(400).body(inn.getMessage());
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<String> handleHmnrException(HttpMessageNotReadableException hmnr){
+        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"time\": HH-MM-SS \n \"persons\": Integer \n \"tableNumber\": Integer");
     }
 
 
