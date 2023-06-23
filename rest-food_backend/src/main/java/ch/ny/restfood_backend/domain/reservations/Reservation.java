@@ -4,7 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.PositiveOrZero;
-import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -18,11 +19,16 @@ public class Reservation {
     private Integer reservationId;
 
     @Column
-    @Size(min=1, max=300, message = "has to be between 1 and 300 characters")
-    private String name;
+    private LocalDate date;
+
+    @Column
+    private LocalDateTime time;
 
     @Column
     @PositiveOrZero
-    private Integer price;
+    private Integer persons;
 
+    @Column
+    @PositiveOrZero
+    private Integer tableNumber;
 }
