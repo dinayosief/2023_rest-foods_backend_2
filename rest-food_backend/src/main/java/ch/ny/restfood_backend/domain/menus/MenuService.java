@@ -17,7 +17,7 @@ public class MenuService {
     MenuRepository menuRepository;
 
     public List<Menu> getAllMenus(){
-        log.info("all menus was attempted to be accessed");
+        log.info("all menus were attempted to be accessed");
         return new ArrayList<>(menuRepository.findAll());
     }
 
