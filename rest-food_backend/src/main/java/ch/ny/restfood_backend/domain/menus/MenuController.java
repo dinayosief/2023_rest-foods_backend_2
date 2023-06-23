@@ -1,7 +1,6 @@
 package ch.ny.restfood_backend.domain.menus;
 
-import ch.ny.restfood_backend.domain.exceptions.IdNotNullException;
-import ch.ny.restfood_backend.domain.reservations.Reservation;
+import ch.ny.restfood_backend.domain.exceptions.InvalidIdException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -85,12 +84,12 @@ public class MenuController {
         return ResponseEntity.status(400).body(Objects.requireNonNull(manve.getFieldError()).getDefaultMessage());
     }
     /**
-     * Handles IdNotNullException
+     * Handles InvalidIdException
      * @param inn
      * @return 400 error and error message
      */
-    @ExceptionHandler(IdNotNullException.class)
-    public ResponseEntity<String> handleInnException(IdNotNullException inn){
+    @ExceptionHandler(InvalidIdException.class)
+    public ResponseEntity<String> handleInnException(InvalidIdException inn){
         return ResponseEntity.status(400).body(inn.getMessage());
     }
 

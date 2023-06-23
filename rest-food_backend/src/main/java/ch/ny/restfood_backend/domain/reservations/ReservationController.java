@@ -1,6 +1,7 @@
 package ch.ny.restfood_backend.domain.reservations;
 
-import ch.ny.restfood_backend.domain.exceptions.IdNotNullException;
+import ch.ny.restfood_backend.domain.exceptions.InvalidIdException;
+import ch.ny.restfood_backend.domain.exceptions.InvalidTimeException;
 import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,18 +97,23 @@ public class ReservationController {
         return ResponseEntity.status(400).body(Objects.requireNonNull(manve.getFieldError()).getDefaultMessage());
     }
     /**
-     * Handles IdNotNullException
+     * Handles InvalidIdException
      * @param inn
      * @return 400 error and error message
      */
-    @ExceptionHandler(IdNotNullException.class)
-    public ResponseEntity<String> handleInnException(IdNotNullException inn){
-        return ResponseEntity.status(400).body(inn.getMessage());
+    @ExceptionHandler(InvalidIdException.class)
+    public ResponseEntity<String> handleIiException(InvalidIdException ii){
+        return ResponseEntity.status(400).body(ii.getMessage());
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<String> handleHmnrException(HttpMessageNotReadableException hmnr){
-        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"time\": HH-MM-SS \n \"persons\": Integer \n \"tablenumber\": Integer");
+        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"starttime\": HH-MM-SS \n \"endtime\": HH-MM-SS \n \"persons\": Integer \n \"tablenumber\": Integer");
+    }
+
+    @ExceptionHandler(InvalidTimeException.class)
+    public ResponseEntity<String> handleItException(InvalidTimeException it){
+        return ResponseEntity.status(400).body(it.getMessage());
     }
 
 
