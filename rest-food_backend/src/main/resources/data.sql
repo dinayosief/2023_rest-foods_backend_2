@@ -16,8 +16,7 @@ VALUES
     ('Dessert', '2', 'url', 'Sesambällchen', '3.50', 'Knusprige Sesambällchen gefüllt mit süßer Lotuspaste.'),
     ('Dessert', '3', 'url', 'Lychee-Eis', '3.50', 'Erfrischendes Eis mit dem exotischen Geschmack von Lychee.');
 
-
-INSERT INTO Reservation(date, time, persons, tel, tableNumber)
+INSERT INTO reservation(date, time, persons, tel, tablenumber)
 VALUES ('2023-06-23', '15:30:00', '2', '076 545 82 44','2'),
        ('2023-06-23', '17:30:00', '3', '076 753 54 56','3'),
        ('2023-06-23', '11:45:00', '1', '076 545 82 44','4'),

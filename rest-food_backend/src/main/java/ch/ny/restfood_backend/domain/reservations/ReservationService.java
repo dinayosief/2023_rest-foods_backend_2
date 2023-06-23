@@ -72,7 +72,7 @@ public class ReservationService {
         reservationUpdate.setDate(reservation.getDate());
         reservationUpdate.setTime(reservation.getTime());
         reservationUpdate.setPersons(reservation.getPersons());
-        reservationUpdate.setTableNumber(reservation.getTableNumber());
+        reservationUpdate.setTablenumber(reservation.getTablenumber());
 
         reservationRepository.save(reservationUpdate);
 

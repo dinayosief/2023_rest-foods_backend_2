@@ -107,7 +107,7 @@ public class ReservationController {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<String> handleHmnrException(HttpMessageNotReadableException hmnr){
-        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"time\": HH-MM-SS \n \"persons\": Integer \n \"tableNumber\": Integer");
+        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"time\": HH-MM-SS \n \"persons\": Integer \n \"tablenumber\": Integer");
     }
 
 

@@ -6,7 +6,6 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -33,6 +32,9 @@ public class Reservation {
     private Integer persons;
 
     @Column
+    private String tel;
+
+    @Column
     @PositiveOrZero
-    private Integer tableNumber;
+    private Integer tablenumber;
 }
