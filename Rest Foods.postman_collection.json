@@ -34,7 +34,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/reservations/1",
+							"raw": "http://localhost:8080/reservations/999",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -42,7 +42,7 @@
 							"port": "8080",
 							"path": [
 								"reservations",
-								"1"
+								"999"
 							]
 						}
 					},
@@ -95,7 +95,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"2023-05-06\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 1,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"2023-05-06\",\r\n    \"lastname\":\"Last Name\",\r\n    \"starttime\": \"12:30:00\",\r\n    \"endtime\": \"13:00:00\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -123,7 +123,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"06-05-2003\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 2,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"reservationId\": null,\r\n    \"lastname\":\"Last Name\",\r\n    \"date\": \"2023-05-069\",\r\n    \"starttime\": \"12:30:00\",\r\n    \"endtime\": \"11:00:00\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -151,7 +151,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": 2,\r\n    \"date\": \"2023-12-12\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 3,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"reservationId\": 1,\r\n    \"lastname\":\"Last Name\",\r\n    \"date\": \"2023-05-06\",\r\n    \"starttime\": \"12:30:00\",\r\n    \"endtime\": \"13:00:00\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -179,7 +179,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": 2,\r\n    \"date\": \"12-12-2003\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 3,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"reservationId\": null,\r\n    \"lastname\":\"Last Name\",\r\n    \"date\": \"2023-05-06\",\r\n    \"starttime\": \"12:30:00\",\r\n    \"endtime\": \"17:00:00\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -230,7 +230,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/menus/1",
+							"raw": "http://localhost:8080/menus/30",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -238,7 +238,7 @@
 							"port": "8080",
 							"path": [
 								"menus",
-								"1"
+								"30"
 							]
 						}
 					},
@@ -291,7 +291,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"2023-05-06\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 1,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"menuId\": null,\r\n    \"type\":\"Appetizers\",\r\n    \"img\":\"url\",\r\n    \"name\":\"new dish\",\r\n    \"price\": 12,\r\n    \"description\":\"a very yummy new dish\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -319,7 +319,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"06-05-2003\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 2,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"menuId\": null,\r\n    \"type\":\"Appetizers\",\r\n    \"img\":\"url\",\r\n    \"name\":\"bad dish\",\r\n    \"price\": \"not a double\",\r\n    \"description\":\"not an ideal dish\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -347,7 +347,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": 2,\r\n    \"date\": \"2023-12-12\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 3,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"menuId\": 2,\r\n    \"type\":\"Dessert\",\r\n    \"img\":\"url\",\r\n    \"name\":\"updated dessert\",\r\n    \"price\": 12,\r\n    \"description\":\"a very yummy updated dish\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -375,7 +375,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": 2,\r\n    \"date\": \"12-12-2003\",\r\n    \"time\": \"12:30:00\",\r\n    \"persons\": 3,\r\n    \"tableNumber\": 2\r\n}",
+							"raw": "{\r\n    \"menuId\": 1,\r\n    \"type\":\"Appetizers\",\r\n    \"img\":\"url\",\r\n    \"name\":\"balut\",\r\n    \"price\": \"one fifty\",\r\n    \"description\":\"this dish shouldnt exist\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
