@@ -1,4 +1,4 @@
-package com.ny.restfood_backend;
+package ch.ny.restfood_backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

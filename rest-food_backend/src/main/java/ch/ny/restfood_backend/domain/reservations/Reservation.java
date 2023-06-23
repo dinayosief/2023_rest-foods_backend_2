@@ -1,4 +1,4 @@
-package com.ny.restfood_backend.domain.reservations;
+package ch.ny.restfood_backend.domain.reservations;
 
 import lombok.*;
 

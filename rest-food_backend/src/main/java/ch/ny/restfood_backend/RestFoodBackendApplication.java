@@ -1,4 +1,4 @@
-package com.ny.restfood_backend;
+package ch.ny.restfood_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
