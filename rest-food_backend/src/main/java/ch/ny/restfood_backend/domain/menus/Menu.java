@@ -17,6 +17,8 @@ public class Menu {
     @Column(name="ID")
     private Integer menuId;
     @NotBlank
+    private String type;
+    @NotBlank
     private String img;
     @NotBlank
     @Size(min=1, max=300, message = "has to be between 1 and 300 characters")
@@ -26,4 +28,6 @@ public class Menu {
 
     @Column
     private Integer price;
+
+    private String description;
 }

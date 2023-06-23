@@ -1,19 +1,19 @@
-INSERT INTO Menu(menuId, img, name, price)
-VALUES ('1', 'url', 'Frühlingsrollen', '7.80'),
-       ('1', 'url', 'Knusprige Ente mit Pfannkuchen', '10.00'),
-       ('1', 'url', 'Sichuan-Hühnchen-Satay', '13.00'),
+INSERT INTO Menu(type,menuId, img, name, price, description)
+VALUES ('Appetizers','1', 'url', 'Frühlingsrollen', '7.80'),
+       ('Appetizers','2', 'url', 'Knusprige Ente mit Pfannkuchen', '10.00'),
+       ('Appetizers','3', 'url', 'Sichuan-Hühnchen-Satay', '13.00'),
 
-       ('2', 'url', 'Ente in Hoisinsauce', '24.00'),
-       ('2', 'url', 'Kung Pao Hühnchen', '26.00'),
-       ('2', 'url', 'Süß-saures Hühnchen', '25.00'),
+       ('main course','1', 'url', 'Ente in Hoisinsauce', '24.00'),
+       ('main course','2', 'url', 'Kung Pao Hühnchen', '26.00'),
+       ('main course','3', 'url', 'Süß-saures Hühnchen', '25.00'),
 
-       ('3', 'url', 'Grüner Tee', '5.00'),
-       ('3', 'url', 'Jasmin-Tee', '5.00'),
-       ('3', 'url', 'Lychee-Saft', '5.50'),
+       ('drinks','1', 'url', 'Grüner Tee', '5.00'),
+       ('drinks','2', 'url', 'Jasmin-Tee', '5.00'),
+       ('drinks','3', 'url', 'Lychee-Saft', '5.50'),
 
-       ('4', 'url', 'Gebackene Banane mit Honig', '7.80'),
-       ('4', 'url', 'Sesambällchen', '6.50'),
-       ('4', 'url', 'Lychee-Eis', '5.00');
+       ('Dessert','1', 'url', 'Gebackene Banane mit Honig', '7.80'),
+       ('Dessert','2', 'url', 'Sesambällchen', '6.50'),
+       ('Dessert','3', 'url', 'Lychee-Eis', '5.00');
 
 INSERT INTO Reservation(date, time, persons, tel, tableNumber)
 VALUES ('2023-06-23', '15:30:00', '2', '076 545 82 44','2'),

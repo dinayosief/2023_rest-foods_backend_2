@@ -1,12 +1,15 @@
 package ch.ny.restfood_backend.domain.menus;
 
+import ch.ny.restfood_backend.domain.exceptions.IdNotNullException;
 import ch.ny.restfood_backend.domain.reservations.Reservation;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/menus")
@@ -72,4 +75,23 @@ public class MenuController {
         menuService.update(menu);
         return ResponseEntity.ok(menu);
     }
+    /**
+     * Handles MethodArgumentNotValidException
+     * @param manve
+     * @return 400 error and error message
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<String> handleManveException(MethodArgumentNotValidException manve){
+        return ResponseEntity.status(400).body(Objects.requireNonNull(manve.getFieldError()).getDefaultMessage());
+    }
+    /**
+     * Handles IdNotNullException
+     * @param inn
+     * @return 400 error and error message
+     */
+    @ExceptionHandler(IdNotNullException.class)
+    public ResponseEntity<String> handleInnException(IdNotNullException inn){
+        return ResponseEntity.status(400).body(inn.getMessage());
+    }
+
 }
