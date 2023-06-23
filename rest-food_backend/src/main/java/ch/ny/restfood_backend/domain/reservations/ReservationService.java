@@ -41,7 +41,8 @@ public class ReservationService {
     public void update(Reservation reservation){
         Reservation reservationUpdate = reservationRepository.findById(reservation.getReservationId()).orElseThrow(() -> new ResourceNotFoundException("Reservation with id " + reservation.getReservationId() + " was not found."));
 
-        //set other attributes
+        reservationUpdate.setName(reservation.getName());
+        reservationUpdate.setPrice(reservation.getPrice());
 
         reservationRepository.save(reservationUpdate);
 
