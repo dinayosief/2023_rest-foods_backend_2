@@ -19,5 +19,4 @@ public class Menu {
     private String Name;
     @NotBlank
     private String Price;
-
 }
