@@ -1,6 +1,6 @@
-package com.ny.restfood_backend.domain.menus;
+package ch.ny.restfood_backend.domain.menus;
 
-import com.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
+import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.List;
 public class MenuService {
 
     @Autowired
-MenuRepository menuRepository;
+    MenuRepository menuRepository;
 
     public List<Menu> getAllMenus(){
         log.info("all menus was attempted to be accessed");

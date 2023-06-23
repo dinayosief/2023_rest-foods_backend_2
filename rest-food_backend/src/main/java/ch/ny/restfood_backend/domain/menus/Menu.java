@@ -1,4 +1,4 @@
-package com.ny.restfood_backend.domain.menus;
+package ch.ny.restfood_backend.domain.menus;
 
 import lombok.*;
 import javax.persistence.*;

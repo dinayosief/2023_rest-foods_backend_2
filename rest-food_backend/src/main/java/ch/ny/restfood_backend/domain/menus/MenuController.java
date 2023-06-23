@@ -1,4 +1,4 @@
-package com.ny.restfood_backend.domain.menus;
+package ch.ny.restfood_backend.domain.menus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
