@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * This class is responsible for implementing the endpoints for all CRUD operations on reservations
+ * This class is responsible for implementing the endpoints for all CRUD operations for reservations
  */
 @RestController
 @RequestMapping("/reservations")

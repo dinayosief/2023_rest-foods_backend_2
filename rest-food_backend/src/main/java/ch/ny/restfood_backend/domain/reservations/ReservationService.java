@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is responsible for implementing crud operations for reservations
+ * This class is responsible for implementing the crud operations for reservations
  */
 @Service
 @Log4j2

@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * This class is responsible for implementing the endpoints for all CRUD operations for menus
+ */
 @RestController
 @RequestMapping("/menus")
 public class MenuController {
@@ -26,6 +29,7 @@ public class MenuController {
      * @return ResponseEntity containing List of all Menus
      */
     @GetMapping
+    @Operation(summary = "get all menus", description = "This method returns a list of all menus")
     public ResponseEntity<List<Menu>> getAllMenus() {
         return ResponseEntity.ok().body(menuService.getAllMenus());
     }
@@ -37,6 +41,7 @@ public class MenuController {
      * @return ResponseEntity containing Menu with said id
      */
     @GetMapping("/{menuId}")
+    @Operation(summary = "get a menu by id", description = "This method returns a menu by its index")
     public ResponseEntity<Menu> getMenuById(@PathVariable("menuId") Integer menuId) {
         return ResponseEntity.ok().body(menuService.getMenuById(menuId));
     }
@@ -59,7 +64,7 @@ public class MenuController {
      * @return ResponseEntity ok if method was completed
      */
     @PostMapping
-    @Operation(summary = "create a new menu", description = "creates a new menu from request body in database")
+    @Operation(summary = "create a new menu", description = "This method creates a new menu using the request body")
     public ResponseEntity<Menu> saveMenu(@RequestBody Menu menu) {
         menuService.save(menu);
         return ResponseEntity.ok(menu);
@@ -72,7 +77,7 @@ public class MenuController {
      * @return ResponseEntity ok if method was completed
      */
     @PutMapping
-    @Operation(summary = "update a menu", description = "updates a menu with the request body by id")
+    @Operation(summary = "update a menu", description = "This method updates a menu using the request body identified by a matching id ")
     public ResponseEntity<Menu> updateMenu(@RequestBody Menu menu) {
         menuService.update(menu);
         return ResponseEntity.ok(menu);

@@ -6,6 +6,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
+/**
+ * This class contains the attributes of a menu and the corresponding validations
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -17,10 +20,13 @@ public class Menu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
     private Integer menuId;
+
     @NotBlank
     private String type;
+
     @NotBlank
     private String img;
+
     @NotBlank
     @Size(min=1, max=300, message = "has to be between 1 and 300 characters")
     @Column
@@ -29,6 +35,7 @@ public class Menu {
     @NotBlank
     @Column
     private String description;
+
     @PositiveOrZero
     private Double price;
 }

@@ -9,6 +9,10 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
+/**
+ * This class contains the attributes of a reservation and the corresponding validations
+ */
 @Entity
 @Data
 @NoArgsConstructor
