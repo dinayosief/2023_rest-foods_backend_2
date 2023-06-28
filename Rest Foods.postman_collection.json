@@ -34,7 +34,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/reservations/999",
+							"raw": "http://localhost:8080/reservations/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -42,7 +42,7 @@
 							"port": "8080",
 							"path": [
 								"reservations",
-								"999"
+								"1"
 							]
 						}
 					},
@@ -95,7 +95,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"2023-05-06\",\r\n    \"lastname\":\"Last Name\",\r\n    \"starttime\": \"12:30:00\",\r\n    \"endtime\": \"13:00:00\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
+							"raw": "{\r\n    \"reservationId\": null,\r\n    \"date\": \"2023-05-06\",\r\n    \"lastname\":\"Last Name\",\r\n    \"time\": \"12:30:am\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -151,7 +151,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"reservationId\": 1,\r\n    \"lastname\":\"Last Name\",\r\n    \"date\": \"2023-05-06\",\r\n    \"starttime\": \"12:30:00\",\r\n    \"endtime\": \"13:00:00\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
+							"raw": "{\r\n    \"reservationId\": 2,\r\n    \"lastname\":\"Last Name\",\r\n    \"date\": \"2023-05-06\",\r\n    \"time\": \"12:30:am\",\r\n    \"persons\": 1,\r\n    \"tel\": \"079 123 123 46 57\",\r\n    \"tablenumber\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

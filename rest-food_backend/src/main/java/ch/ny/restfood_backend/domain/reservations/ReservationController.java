@@ -1,7 +1,6 @@
 package ch.ny.restfood_backend.domain.reservations;
 
 import ch.ny.restfood_backend.domain.exceptions.InvalidIdException;
-import ch.ny.restfood_backend.domain.exceptions.InvalidTimeException;
 import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,17 +112,7 @@ public class ReservationController {
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<String> handleHmnrException(HttpMessageNotReadableException hmnr){
-        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"starttime\": HH-MM-SS \n \"endtime\": HH-MM-SS \n \"persons\": Integer \n \"tablenumber\": Integer");
-    }
-
-    /**
-     * Handles InvalidTimeException
-     * @param it InvalidTimeException
-     * @return 400 and error message
-     */
-    @ExceptionHandler(InvalidTimeException.class)
-    public ResponseEntity<String> handleItException(InvalidTimeException it){
-        return ResponseEntity.status(400).body(it.getMessage());
+        return ResponseEntity.status(400).body("Invalid arguments, please check format \n \n \"reservationId\": Integer(PUT) or null(POST) \n \"date\": YYYY-MM-DD \n \"time\": HH-MM-a \n \"persons\": Integer \n \"tablenumber\": Integer");
     }
 
 

@@ -16,10 +16,10 @@ VALUES
     ('Dessert',  'img/', 'Sesambällchen', '3.50', 'Knusprige Sesambällchen gefüllt mit süßer Lotuspaste.'),
     ('Dessert', 'img/', 'Lychee-Eis', '3.50', 'Erfrischendes Eis mit dem exotischen Geschmack von Lychee.');
 
-INSERT INTO reservation(date, lastname, starttime, endtime, persons, tel, tablenumber)
-VALUES ('2023-06-23', 'Heule', '15:30:00', '16:00:00', '2', '076 545 82 44','2'),
-       ('2023-06-23', 'Yosief', '17:30:00', '18:30:00', '3', '076 753 54 56','3'),
-       ('2023-06-23', 'Nguyen', '11:45:00', '13:00:00', '1', '076 545 82 44','4'),
-       ('2023-06-23', 'Fürst', '20:30:00', '22:00:00', '4', '076 753 54 56','5');
+INSERT INTO reservation(time, lastname, date, persons, tel, tablenumber)
+VALUES ('12:00:am', 'Heule', '2023-10-15', '2', '076 545 82 44','2'),
+       ('09:30:am', 'Yosief', '2023-07-04', '3', '076 753 54 56','3'),
+       ('05:25:pm', 'Nguyen', '2023-06-12','1', '076 545 82 44','4'),
+       ('01:30:am', 'Fürst', '2023-08-04', '4', '076 753 54 56','5');
 
 

@@ -33,12 +33,8 @@ public class Reservation {
     private LocalDate date;
 
     @Column
-    @JsonFormat(pattern = "HH:mm:ss")
-    private LocalTime starttime;
-
-    @Column
-    @JsonFormat(pattern = "HH:mm:ss")
-    private LocalTime endtime;
+    @JsonFormat(pattern = "HH:mm:a")
+    private LocalTime time;
 
     @Column
     @PositiveOrZero

@@ -1,7 +1,6 @@
 package ch.ny.restfood_backend.domain.reservations;
 
 import ch.ny.restfood_backend.domain.exceptions.InvalidIdException;
-import ch.ny.restfood_backend.domain.exceptions.InvalidTimeException;
 import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +47,8 @@ public class ReservationService {
      */
     public void save(Reservation reservation) {
         if (reservation.getReservationId() != null) {
-            throw new InvalidIdException("Error: ID has to be null");
-        } else if (!reservation.getStarttime().isBefore(reservation.getEndtime())) {
-            throw new InvalidTimeException("Error: End time has to be after start time");
-        } else {
+            throw new InvalidIdException("Error: ID has to be null");}
+        else {
             reservationRepository.save(reservation);
             log.info("New reservation has been added to database");
         }
@@ -76,15 +73,13 @@ public class ReservationService {
      */
     public void update(Reservation reservation) {
         if (reservation.getReservationId() == null){
-            throw new InvalidTimeException("Error: Id must not be null");
+            throw new InvalidIdException("Error: Id must not be null");
         }
-        else if (reservation.getStarttime().isBefore(reservation.getEndtime())) {
             Reservation reservationUpdate = reservationRepository.findById(reservation.getReservationId()).orElseThrow(() -> new ResourceNotFoundException("Reservation with id " + reservation.getReservationId() + " was not found."));
 
             reservationUpdate.setLastname(reservation.getLastname());
             reservationUpdate.setDate(reservation.getDate());
-            reservationUpdate.setStarttime(reservation.getStarttime());
-            reservationUpdate.setEndtime(reservation.getEndtime());
+            reservationUpdate.setTime(reservation.getTime());
             reservationUpdate.setPersons(reservation.getPersons());
             reservationUpdate.setTel(reservation.getTel());
             reservationUpdate.setTablenumber(reservation.getTablenumber());
@@ -92,6 +87,5 @@ public class ReservationService {
             reservationRepository.save(reservationUpdate);
 
             log.info("Reservation with id " + reservationUpdate.getReservationId() + "was updated.");
-        } else throw new InvalidTimeException("Error: End time has to be after start time");
-    }
+        }
 }

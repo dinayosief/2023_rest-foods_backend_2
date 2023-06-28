@@ -1,9 +1,7 @@
 package ch.ny.restfood_backend.domain.menus;
 
 import ch.ny.restfood_backend.domain.exceptions.InvalidIdException;
-import ch.ny.restfood_backend.domain.exceptions.InvalidTimeException;
 import ch.ny.restfood_backend.domain.exceptions.ResourceNotFoundException;
-import ch.ny.restfood_backend.domain.reservations.Reservation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,7 +73,7 @@ public class MenuService {
      */
     public void update(Menu menu) {
         if (menu.getMenuId() == null) {
-            throw new InvalidTimeException("Error: Id must not be null");
+            throw new InvalidIdException("Error: Id must not be null");
         } else {
             Menu menuUpdate = menuRepository.findById(menu.getMenuId()).orElseThrow(() -> new ResourceNotFoundException("Menu with id " + menu.getMenuId() + " was not found."));
 
